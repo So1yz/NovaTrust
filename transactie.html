@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Transactiegeschiedenis</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="brand">
+      <img src="novatrustlogo.png" alt="Logo" class="logo">
+      <div>
+        <h1>Novatrust</h1>
+        <p>Transactiegeschiedenis</p>
+      </div>
+    </div>
+  </header>
+<a href="index.html" class="back-simple">← Terug</a>
+
+  <div class="wrap">
+    <div class="panel transaction-panel">
+
+      <h2>Transactiegeschiedenis</h2>
+      <p class="muted">Bekijk en filter je inkomende en uitgaande transacties</p>
+
+
+      <div class="transaction-filters">
+        <select id="typeFilter">
+          <option value="alle">Alle</option>
+          <option value="inkomend">Inkomend</option>
+          <option value="uitgaand">Uitgaand</option>
+        </select>
+
+        <input type="date" id="dateFilter">
+
+        <button class="nav-btn" onclick="filterTransactions()">Filter</button>
+      </div>
+
+    
+      <div id="transactions" class="transaction-list">
+  
+      </div>
+
+    </div>
+  </div>
+
+  
+
+  <script src="app.js"></script>
+</body>
+</html>

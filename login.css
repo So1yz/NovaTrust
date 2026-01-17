@@ -1,0 +1,114 @@
+body {
+background-image: url(5.jpeg);
+background-size: cover;       
+background-position: center;  
+display: flex;
+align-items: center;         
+justify-content: center; 
+margin: 0;
+padding: 0;
+font-family: Arial, sans-serif;
+color: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+
+
+.container {
+background: #0d1844;
+padding: 40px;
+border-radius: 14px;
+width: 350px;
+box-shadow: 0 0 30px rgba(0,0,0,0.4);
+}
+
+
+h1 {
+text-align: center;
+margin-bottom: 25px;
+font-weight: 600;
+}
+
+
+form {
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+
+
+input {
+padding: 12px;
+border: none;
+border-radius: 8px;
+font-size: 16px;
+outline: none;
+}
+
+
+button {
+padding: 12px;
+background: #1d5cff;
+border: none;
+border-radius: 8px;
+font-size: 18px;
+color: #fff;
+cursor: pointer;
+transition: 0.2s;
+}
+
+
+button:hover {
+background: #4476ff;
+transform: scale(1.03);
+}
+
+
+a {
+color: #5fa3ff;
+text-decoration: none;
+
+}
+
+.logo {
+    display: block;
+    margin: 0 auto 16px;   /* netter boven Inloggen */
+    width: 90px;          /* kleiner */
+    padding: 10px;         /* ruimte voor border */
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.25); /* optioneel, maar sexy */
+}
+
+.subtitle{
+  margin: -10px 0 18px;
+  text-align:center;
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+}
+
+.forgot{
+  display: block;;
+  font-size: 13px;
+  color: rgba(95,163,255,0.9);
+
+}
+.forgot:hover{ text-decoration: underline; }
+
+.back-home{
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.back-home:hover{
+  color: #5fa3ff;
+  transform: translateX(-3px);
+}

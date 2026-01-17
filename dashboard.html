@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rekeningbeheer</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<header class="header">
+  <div class="brand">
+    <img src="novatrustlogo.png" alt="Logo" class="logo">
+    <div>
+      <h1>Novatrust</h1>
+      <p>Overzicht van je rekeningen</p>
+    </div>
+  </div>
+  <button id="openModal">+ Nieuwe rekening</button>
+  <button class="nav-btn "
+  onclick="window.location.href='overschrijven.html'">
+Overschrijven ↗
+</button>
+ <button class="nav-btn secondary"
+      onclick="window.location.href='transactie.html'">
+      Transacties ↗
+    </button>
+     <button class="nav-btn secondary"
+      onclick="window.location.href='beleggingen.html'">
+      Beleggingen ↗
+    </button>
+
+
+</header>
+<a href="index.html" class="back-simple">← Terug</a>
+
+<main class="grid">
+
+  <section class="panel">
+    <h2>Rekeningen</h2>
+    <p class="muted" id="countText">0 rekeningen</p>
+    <div id="cards" class="cards"></div>
+  </section>
+
+  <aside class="panel">
+    <h2>Overzicht</h2>
+
+    <div class="stat">
+      <span>Totaalsaldo</span>
+      <strong id="totalText">€ </strong>
+    </div>
+
+    <div class="stat">
+      <span>Aantal rekeningen</span>
+      <strong id="nrText">0</strong>
+    </div>
+
+    <div class="stat">
+      <span>Laatste Transacties</span>
+      <p id="lastAction">- </p>
+     
+    </div>
+  </aside>
+
+</main>
+
+<!-- MODAL -->
+<div id="backdrop" class="backdrop hidden">
+  <div class="modal">
+    <h3>Nieuwe rekening</h3>
+
+    <form id="form">
+      <input id="name" placeholder="Rekeningnaam" required>
+
+      <select id="type">
+        <option>Betaal</option>
+        <option>Sparen</option>
+        <option>Beleggen</option>
+      </select>
+
+      <div class="actions">
+        <button type="submit">Opslaan</button>
+        <button type="button" id="closeModal">Annuleren</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

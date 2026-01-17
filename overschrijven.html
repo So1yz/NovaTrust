@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaTrust • Overschrijven</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+<header class="header">
+  <div class="brand">
+    <img src="novatrustlogo.png" alt="Logo" class="logo">
+    <div>
+      <h1>Novatrust</h1>
+      <p>Geld overmaken</p>
+    </div>
+  </div>
+
+  <div class="header-actions">
+    <button class="nav-btn" onclick="window.location.href='dashboard.html'">
+      Dashboard ↩
+    </button>
+  </div>
+</header>
+    
+
+  <section class="panel transfer-panel">
+    <div class="panelHead">
+      <h2>Geld overschrijven</h2>
+      <span class="muted">Beveiligde transactie</span>
+    </div>
+
+    <div class="panelBody center-body">
+      <form id="transferForm" class="transferForm">
+
+        <label>Van rekening</label>
+        <select id="fromAcc" required></select>
+
+        <label>Naar rekening</label>
+        <select id="toAcc" required></select>
+
+        <label>Bedrag (€)</label>
+        <input type="number" id="amount" step="0.01" placeholder="Bijv. 50.00" required>
+
+        <label>Bevestig wachtwoord</label>
+        <input type="password" id="password" placeholder="Je wachtwoord" required>
+
+        <button class="btnSolid big-btn" type="submit">
+          Overschrijven
+        </button>
+
+        <p id="transferMsg" class="transferMsg"></p>
+
+        <div id="successBox" class="successBox">
+          <img src="bak3.jpg" alt="Succes">
+          <p id="successText"></p>
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
