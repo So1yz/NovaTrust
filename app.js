@@ -163,6 +163,25 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function render() {
+    if (cardsEl) {
+  cardsEl.addEventListener("click", (e) => {
+    if (!e.target.classList.contains("delete-btn")) return;
+
+    const id = e.target.dataset.id;
+    const acc = accounts.find(a => a.id === id);
+    if (!acc) return;
+
+    if (!confirm(`Rekening "${acc.name}" verwijderen? Dit kan niet ongedaan.`)) {
+      return;
+    }
+
+    accounts = accounts.filter(a => a.id !== id);
+    saveAccounts();
+    render();
+    setLast(`🗑️ Rekening verwijderd: ${acc.name}`);
+  });
+}
+
     if (!cardsEl) return;
 
     // empty state
@@ -180,33 +199,27 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     cardsEl.innerHTML = accounts
-      .map(a => {
-        const safeName = escapeHtml(a.name);
-        const safeType = escapeHtml(a.type);
-        return `
-          <div class="card" data-id="${a.id}">
-            <div style="display:flex; justify-content:space-between; gap:10px; align-items:flex-start;">
-              <div>
-                <div style="font-weight:800; margin-bottom:6px;">${safeName}</div>
-                <div style="font-size:12px; color: rgba(255,255,255,0.65);">${safeType}</div>
-              </div>
+  .map(a => {
+    const safeName = escapeHtml(a.name);
+    const safeType = escapeHtml(a.type);
 
-              <div style="
-                font-size:12px;
-                padding:6px 10px;
-                border-radius: 999px;
-                border: 1px solid rgba(255,255,255,0.10);
-                background: rgba(255,255,255,0.04);
-                color: rgba(255,255,255,0.8);
-                white-space:nowrap;
-              ">
-                ${formatEUR(a.balance)}
-              </div>
-            </div>
+    return `
+      <div class="card" data-id="${a.id}">
+        <div style="display:flex; justify-content:space-between; gap:10px;">
+          <div>
+            <div style="font-weight:800;">${safeName}</div>
+            <div style="font-size:12px; opacity:.7;">${safeType}</div>
           </div>
-        `;
-      })
-      .join("");
+
+          <div style="text-align:right;">
+            <div>${formatEUR(a.balance)}</div>
+            <button class="delete-btn" data-id="${a.id}">Verwijder</button>
+          </div>
+        </div>
+      </div>
+    `;
+  })
+  .join("");
 
     updateStats();
   }
@@ -220,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .replaceAll("'", "&#039;");
   }
 
-  // ----- Create account -----
+  //  Create account 
   function createAccount(name, type) {
     const account = {
       id: (crypto.randomUUID && crypto.randomUUID()) || String(Date.now()),
@@ -236,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setLast(`+ Nieuwe rekening: ${account.name} (${account.type})`);
   }
 
-  // ----- Events -----
+  //  Events 
   openBtn?.addEventListener("click", openModal);
   closeBtn?.addEventListener("click", closeModal);
 
@@ -392,4 +405,5 @@ function filterTransactions() {
 }
 
 showTransactions(transactions);
+
 
