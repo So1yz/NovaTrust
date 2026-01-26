@@ -1,50 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto-Nova</title>
-    <link rel="stylesheet" href="dashboard.css">
-</head>
-<header class="header">
-  <div class="brand">
-    <img src="novatrustlogo.png" alt="Logo" class="logo">
-    <div>
-      <h1>Novatrust</h1>
-      <p>Cryptovaluta overzicht</p>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Crypto-Nova</title>
+      <link rel="stylesheet" href="dashboard.css">
+  </head>
+  <header class="header">
+    <div class="brand">
+      <img src="novatrustlogo.png" alt="Logo" class="logo">
+      <div>
+        <h1>Novatrust</h1>
+        <p>Cryptovaluta overzicht</p>
+      </div>
     </div>
+
+    <div class="header-actions">
+      <button class="nav-btn" onclick="window.location.href='dashboard.html'">
+        Dashboard ↩
+      </button>
+    </div>
+  </header>
+  <body>
+  <div class="crypto-card">
+  <h1>Cryptovaluta Overzicht</h1>
+
+  <h2>Saldo: €<span id="balance">1000.00</span></h2>
+
+  <div id="prices">
+    <p>BTC: €<span id="btc">90177.58</span></p>
+    <p>ETH: €<span id="eth">4733.48</span></p>
+    <p>LTC: €<span id="ltc">247.05</span></p>
   </div>
 
-  <div class="header-actions">
-    <button class="nav-btn" onclick="window.location.href='dashboard.html'">
-      Dashboard ↩
-    </button>
-  </div>
-</header>
-<body class="body-crypto">
-    <h1>Cryptovaluta Overzicht</h1>
-<h2>Saldo: €<span id="balance">1000</span></h2>
+  <select id="coin">
+    <option value="btc">Bitcoin</option>
+    <option value="eth">Ethereum</option>
+    <option value="ltc">Litecoin</option>
+  </select>
 
-<div id="prices">
-  <p id="btc">Bitcoin: €90000</p>
-  <p id="eth">Ethereum: €4800</p>
-  <p id="ltc">Litecoin: €250</p>
+  <input type="number" id="amount" placeholder="Bedrag in €">
+
+  <div class="actions">
+    <button onclick="buy()">Kopen</button>
+    <button onclick="sell()">Verkopen</button>
+  </div>
+
+  <h2>Investeringen</h2>
+  <ul id="portfolio"></ul>
+  <script src="Crypto.js"></script>
+
 </div>
-
-<select id="coin">
-  <option value="btc">Bitcoin</option>
-  <option value="eth">Ethereum</option>
-  <option value="ltc">Litecoin</option>
-</select>
-
-<input type="number" id="amount" placeholder="Bedrag in €">
-
-<button onclick="buy()">Kopen</button>
-<button onclick="sell()">Verkopen</button>
-
-<h2>Investeringen</h2>
-<ul id="portfolio"></ul>
-
-<script src="Crypto.js"></script>
 </body>
 </html>
+
