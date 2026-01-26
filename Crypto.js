@@ -48,13 +48,22 @@ function buy() {
 function sell() {
   let coin = document.getElementById("coin").value;
 
+  if (!portfolio[coin] || portfolio[coin] <= 0) {
+    alert("U heeft niet in bezit om te verkopen.");
+    return;
+  }
+
   let value = portfolio[coin] * prices[coin];
   balance += value;
+
   portfolio[coin] = 0;
+
+  alert("Succesvol verkocht");
 
   updateBalance();
   renderPortfolio();
 }
+
 
 
 function renderPortfolio() {
@@ -67,10 +76,11 @@ function renderPortfolio() {
         coin.toUpperCase() +
         ": " +
         portfolio[coin].toFixed(4) +
-        " (waarde €" +
+        " (In bezit €" +
         (portfolio[coin] * prices[coin]).toFixed(2) +
         ")";
       ul.appendChild(li);
     }
   }
 }
+
