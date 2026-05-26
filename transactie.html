@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaTrust – Transactiegeschiedenis</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Bekijk en filter uw volledige transactiegeschiedenis bij NovaTrust. Inkomende en uitgaande betalingen overzichtelijk weergegeven.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="brand">
+    <img src="assets/img/novatrustlogo.png" alt="NovaTrust Logo" class="logo" width="38" height="38">
+    <div>
+      <h1>Novatrust</h1>
+      <p>Transactiegeschiedenis</p>
+    </div>
+  </div>
+</header>
+
+<a href="dashboard.html" class="back-simple">← Terug</a>
+
+<div class="wrap">
+  <div class="panel transaction-panel">
+
+    <h2>Transactiegeschiedenis</h2>
+    <p class="muted">Bekijk en filter je inkomende en uitgaande transacties</p>
+
+    <div class="transaction-filters">
+      <select id="typeFilter">
+        <option value="alle">Alle</option>
+        <option value="inkomend">Inkomend</option>
+        <option value="uitgaand">Uitgaand</option>
+      </select>
+
+      <input type="date" id="dateFilter">
+
+      <button class="nav-btn" onclick="filterTransactions()">Filter</button>
+    </div>
+
+    <div id="transactions" class="transaction-list"></div>
+
+  </div>
+</div>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>

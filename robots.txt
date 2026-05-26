@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /Service.html
+Allow: /signup.html
+Allow: /login.html
+
+Disallow: /dashboard.html
+Disallow: /overschrijven.html
+Disallow: /transactie.html
+Disallow: /beleggingen.html
+Disallow: /Crypto.html
+
+Sitemap: sitemap.xml
